@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,14 +15,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button secondActivityBtn = (Button)findViewById(R.id.secondActivityBtn);
+        Storage storage = Storage.getInstance();
+
+        storage.addUser(new User("teme"));
+
+
+
+        Button secondActivityBtn = (Button)findViewById(R.id.listActivityBtn);
         secondActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
-                startIntent.putExtra("com.badorek.coursework.SOMETHING", "Hello World!");
+                Intent startIntent = new Intent(getApplicationContext(), ListActivity.class);
                 startActivity(startIntent);
-
 
             }
         });

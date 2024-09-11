@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Coursework"
         tools:targetApi="31">
         <activity
-            android:name=".SecondActivity"
+            android:name=".ListActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
